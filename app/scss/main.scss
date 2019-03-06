@@ -1,0 +1,72 @@
+@import "vars";
+@import "fonts";
+@import "libs";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', sans-serif, serif;
+  color: $font-color;
+
+}
+
+a {
+  text-decoration: none;
+  color: $font-color;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $font-color;
+}
+
+li {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.row {
+  .flex-text-logo {
+    p {
+      margin-bottom: 0;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 20px;
+    }
+  }
+}
+
+.logo-size {
+  img {
+    width: 53px;
+    height: 53px;
+  }
+}
+
+.header-logo {
+  height: 95px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.menu {
+  width: 100%;
+  li {
+    margin-left: 10px;
+    a {
+      transition : all 0.3s;
+      text-transform: uppercase;
+      padding: 15px;
+      &:hover {
+        padding: 15px;
+        background-color: $color-bg;
+        border-color: #49b396;
+        box-shadow: 0 5px 15px rgba(0,0,0,.05), 0 4px 10px rgba(41, 172, 164, .25);
+        color: $font-color-white;
+      }
+    }
+  }
+}
+
+@import "media"; // Always at the end
