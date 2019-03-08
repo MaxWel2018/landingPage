@@ -5,20 +5,20 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: 'Times New Roman', sans-serif, serif;
   color: $font-color;
+  box-sizing: border-box;
 
 }
 
 a {
-  text-decoration: none;
   color: $font-color;
+  text-decoration: none;
 }
 
 a:hover {
-  text-decoration: none;
   color: $font-color;
+  text-decoration: none;
 }
 
 li {
@@ -26,18 +26,23 @@ li {
   text-decoration: none;
 }
 
+.container {
+  padding: 0;
+}
+
 .row {
   .flex-text-logo {
     p {
-      margin-bottom: 0;
-      text-transform: uppercase;
       font-weight: 500;
       font-size: 20px;
+      text-transform: uppercase;
+      margin-bottom: 0;
     }
   }
 }
 
 .logo-size {
+  margin: 0;
   img {
     width: 53px;
     height: 53px;
@@ -46,27 +51,443 @@ li {
 
 .header-logo {
   height: 95px;
-  margin-top: 20px;
   width: 100%;
 }
 
 .menu {
-  width: 100%;
   li {
-    margin-left: 10px;
     a {
-      transition : all 0.3s;
+      white-space: nowrap;
       text-transform: uppercase;
+      transition: all 0.5s;
       padding: 15px;
       &:hover {
-        padding: 15px;
+        color: $font-color-white;
         background-color: $color-bg;
         border-color: #49b396;
-        box-shadow: 0 5px 15px rgba(0,0,0,.05), 0 4px 10px rgba(41, 172, 164, .25);
-        color: $font-color-white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .05), 0 4px 10px rgba(41, 172, 164, .25);
+        padding: 15px;
       }
     }
   }
 }
 
+/** Мы строим Будущее */
+.header-bg-img {
+  background: url('../img/bckgrnd.jpg') no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  width: 100%;
+  height: 460px;
+}
+
+.bg-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p, .button-img, span {
+    color: $font-color-white;
+    text-align: center;
+    width: 60%;
+    padding-bottom: 40px;
+    margin: 0 auto;
+  }
+  p {
+    margin-top: 10px;
+  }
+  .button-img {
+    background: $color-bg;
+    font-family: "Lato Black", serif;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    width: 100%;
+    text-wrap: none;
+    text-transform: uppercase;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    padding: 10px 15px;
+    transition: .3s;
+
+    &:hover {
+      color: $font-color;
+      background: lighten($color-bg, 15%);
+      box-shadow: 0 15px 20px rgba(50, 255, 205, 0.4);
+      transform: translateY(-7px);
+
+    }
+    &:active {
+      background: darken($color-bg, 5%);
+    }
+  }
+  span {
+    font-size: 55px;
+  }
+  svg {
+    transform: rotate(90deg);
+    margin-top: 60px;
+    width: 47px;
+    height: 47px;
+    transition: 0.5s;
+    &:hover {
+      fill: $color-bg;
+    }
+  }
+
+}
+
+// Портфолио
+.portfolio {
+  text-align: center;
+  margin-top: 5%;
+  p {
+    text-transform: uppercase;
+    font-size: 40px;
+  }
+  span {
+    font-size: 20px;
+  }
+}
+
+.field-of-activity {
+  justify-content: center;
+  width: 100%;
+  margin: 5% 0 0 0;
+  .field-flex-activity {
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+    width: 60%;
+
+    a {
+      background: $color-bg;
+      color: $font-color-white;
+      letter-spacing: 1.5px;
+      padding: 15px;
+      margin-left: 5px;
+      margin-right: 5px;
+      white-space: nowrap;
+      border: 2px solid transparent;
+      transition: all 0.5s;
+      &:hover {
+        background: darken($color-bg, 10%);
+        border: 2px solid darken($color-bg, 15%);
+      }
+      &:active {
+        background: $color-bg;
+      }
+    }
+  }
+}
+
+//Flex елементы круги
+.portfolio-elem {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin: 5% 0 0 0;
+  .portfolio-block1-elem, .portfolio-block2-elem {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-bottom: 4%;
+  }
+  .flex-element-portfolio {
+    position: relative;
+    max-width: 100%;
+    .block-hiden {
+      position: absolute;
+      background-color: rgba($color-bg, .75);
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      border-radius: 100px;
+      transition: all .5s;
+      opacity: 0;
+      p {
+        position: absolute;
+        font-family: Lato, serif;
+        color: $font-color-white;
+        font-size: 18px;
+        top: 90px;
+        left: 33px;
+      }
+      span {
+        position: absolute;
+        font-family: Lato, serif;
+        font-size: 14px;
+        color: $font-color-white;
+        top: 119px;
+        left: 52px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: 999;
+        top: 41px;
+        left: 70px;
+        width: 27px;
+        height: 27px;
+
+        background: url("../img/portfolio/icon.png");
+        -webkit-background-size: cover;
+        background-size: cover;
+        cursor: pointer;
+
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        border-radius: 50px;
+        top: 31px;
+        left: 60px;
+        width: 48px;
+        height: 48px;
+        background: rgba(black, 0.5);
+        cursor: pointer;
+
+      }
+
+    }
+    &:hover .block-hiden {
+      opacity: 100;
+    }
+
+  }
+
+}
+
+// о Нас
+
+.about-us {
+  padding-top: 2%;
+  background: $color-bg;
+  height: 700px;
+  text-align: center;
+  .our-team {
+    p {
+      color: $font-color-white;
+      font-size: 35px;
+    }
+    span {
+      color: $font-color-white;
+      font-size: 21px;
+    }
+
+  }
+  .our-team-photo {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    .team-img {
+      position: relative;
+      &:hover {
+        .social-network {
+          opacity: 100;
+        }
+        span {
+          opacity: 100;
+        }
+      }
+
+      .social-network {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba($color-bg, 0.7);
+        height: 45px;
+        padding-left: 10px;
+        padding-right: 10px;
+        top: 20%;
+        left: 18%;
+        transition: 0.5s;
+        opacity: 0;
+        a {
+          padding-left: 2px;
+          padding-right: 2px;
+        }
+      }
+      display: flex;
+      flex-direction: column;
+      height: 420px;
+      background: white;
+      padding: 0;
+      margin-left: 25px;
+      margin-right: 25px;
+      i {
+        display: block;
+        margin-bottom: 10px;
+      }
+      span {
+        display: block;
+        font-family: Lato, cursive;
+        font-size: 14px;
+        width: 100%;
+        text-align: left;
+        padding: 0 10px 0 10px;
+        opacity: 0;
+        transition: 0.5s;
+      }
+      p {
+        margin: 0;
+        padding: 10% 0 0 0;
+      }
+      img {
+        padding: 0;
+        margin: 0;
+        height: 50%;
+        width: 100%;
+      }
+    }
+  }
+
+}
+
+//контакты
+.flex-contacts {
+  background: #ecf0f1;
+  display: flex;
+  flex-direction: column;
+  .our-contacts-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 150px;
+    text-align: center;
+    p {
+      font-size: 38px;
+    }
+    span {
+      font-size: 24px;
+      text-transform: uppercase;
+    }
+  }
+  .block-to-input{
+    width:initial;
+    display: flex;
+  }
+  .form-flex-all {
+    display: flex;
+    .form-flex {
+      width: 50%; // ширина половины для форм
+      form {
+        margin-left: 17%; // отступ формы с лева
+        .form {
+          padding: 20px; // отсутпы внутри форм
+          font-style: italic;
+          margin: 0 0 4% 0;
+          width: 100%!important;
+        }
+        .form-email {
+          margin-left: 2%; // отступ поля эмейл от ф-имени
+        }
+        textarea {
+          padding: 20px; // отсутпы внутри форм
+          width: 100%;
+        }
+        .button-flex{
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          margin-bottom: 10%; // отступ от кнопки к футеру
+          button {
+            display: block;
+          background: $color-bg;
+          color: $font-color-white;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          padding: 10px 35px 10px 35px;
+        }}
+      }
+    }
+    .flex-contacts-data {
+      width: 50%; // ширина половины для контактов
+      margin-left: 2%;
+      h3 {
+        text-transform: uppercase;
+
+        font-weight: 400;
+        margin-bottom: 4%;
+      }
+      .contats-data-block {
+
+        .index {
+          padding-left: 25px;
+          width: 35%;
+          position: relative;
+          &::before {
+            background: url("../img/contacts/icon/1map.png");
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-size: cover;
+            top: 2px;
+            left: 0;
+          }
+        }
+        li {
+          font-size: 18px;
+          padding-left: 25px;
+          margin-top: 4%;
+          position: relative;
+          display: block;
+          &:nth-last-child(2)::before {
+            content: "";
+            position: absolute;
+            background: url("../img/contacts/icon/3fax.png");
+            -webkit-background-size: cover;
+            background-size: cover;
+            top: 3px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+          }
+          &:nth-last-child(1)::before {
+            content: "";
+            position: absolute;
+            background: url("../img/contacts/icon/4mail.png");
+            -webkit-background-size: cover;
+            background-size: cover;
+            top:3px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+          }
+
+          &:nth-last-child(3)::before {
+            content: "";
+            position: absolute;
+            background: url("../img/contacts/icon/2phone.png");
+            -webkit-background-size: cover;
+            background-size: cover;
+            top: 3px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+          }
+
+        }
+      }
+
+    }
+  }
+}
+//Footer
+footer{
+  width: 100%;
+  height: 90px;
+  background: #2d3e50;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  p{
+    padding-left: 2%;
+    color: $font-color-white;
+  }
+}
 @import "media"; // Always at the end

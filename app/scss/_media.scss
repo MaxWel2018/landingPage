@@ -1,32 +1,122 @@
 @import "vars";
 
-
 /*==========  Desktop First  ==========*/
 
 // ≥1200px
 @include media-breakpoint-down(lg) {
-	
+  .flex-text-logo {
+    padding-left: 10px;
+  }
 }
 
 // ≥992px
 @include media-breakpoint-down(md) {
-  .container{
-    width: 100%;
-    margin: 0 10px ;
-    padding: 0;
+  .container {
+    max-width: 100%;
   }
+  .flex-text-logo {
+    padding-left: 20px;
+  }
+.block-to-input{
+  flex-direction: column;
+
+}
+  .flex-contacts .form-flex-all .form-flex form .form-email{
+    margin-left: 0;
+  }
+}
+
+.menu {
+  li {
+    text-align: left;
+
+  }
+  .header-logo {
+    margin-top: 0 !important;
+  }
+
 }
 
 // ≥768px
 @include media-breakpoint-down(sm) {
 
+  .portfolio-elem,.portfolio,.field-of-activity{
+    display: none;
+    
+  }
+  .header-logo {
+    background-color: lighten($color-bg, 70%);
+    margin-top: 0;
+    height: 47px;
+
+  }
+  .menu {
+    li {
+      text-align: center;
+    }
+
+  }
+  .flex-text-logo {
+    padding-left: 25px;
+  }
+
 }
 
 // ≥576px
 @include media-breakpoint-down(xs) {
+  // доработать js бургер меню
+  .our-team-photo{
+    width: 100% ;
+    flex-direction: row;
+  }
+  .menu {
+    display: block;
+    a{
+      transition: all 0.3s;
+      display: block;
+      &:hover{
+      }
+    }
+  }
+  .header-logo {
+    height: 163px;
+
+  }
+  .header-bg-img {
+    .bg-image {
+      .button-img {
+        display: none;
+      }
+      span {
+        font-size: 35px;
+      }
+      p {
+      }
+    }
+  }
+  .field-of-activity {
+    width: 100%;
+    height: 200px;
+    .field-flex-activity {
+      flex-direction: column;
+      width: 100%;
+      background: $color-bg;
+
+      a {
+        transition: all 0.3s;
+        text-align: center;
+        margin: 0;
+        width: 100%;
+        display: block;
+        height: 100%;
+        &:hover{
+          color: $font-color;
+        }
+      }
+    }
+  }
 
 }
-
 
 /*==========  Mobile First  ==========*/
 
@@ -47,5 +137,5 @@
 
 // ≤1200px
 @include media-breakpoint-up(xl) {
-	
+
 }
